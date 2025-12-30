@@ -1,0 +1,27 @@
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/temperature")
+public class TemperatureServlet extends HttpServlet {
+
+    @Override
+    protected void service(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+
+        double celsius = Double.parseDouble(request.getParameter("celsius"));
+        double fahrenheit = (celsius * 9 / 5) + 32;
+
+        out.println("<h2>Temperature Converter</h2>");
+        out.println("<p>Celsius: " + celsius + "</p>");
+        out.println("<p>Fahrenheit: <b>" + fahrenheit + "</b></p>");
+    }
+}

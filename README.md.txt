@@ -1,7 +1,7 @@
-# Simple Interest Calculator (Servlet)
+# Temperature Converter (Servlet)
 
 ## Objective
-To calculate Simple Interest using a servlet without database support.
+To convert temperature from Celsius to Fahrenheit using a servlet without JDBC.
 
 ## Technologies Used
 - Java
@@ -10,4 +10,4 @@ To calculate Simple Interest using a servlet without database support.
 - Apache Tomcat
 
 ## Description
-The user enters Principal, Rate, and Time values in an HTML form. The servlet processes the request in the service() method, calculates simple interest, and displays the result.
+The user enters a temperature in Celsius through an HTML form. The servlet processes the request using the service() method, performs the conversion, and displays the Fahrenheit value.
