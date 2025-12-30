@@ -1,13 +1,15 @@
-# Addition Calculator (Servlet)
+# Employee Salary Viewer (JDBC)
 
 ## Objective
-To build a simple servlet that takes two numbers from an HTML form and prints their sum without using any database connection.
+To retrieve and display the salary of an employee using their employee ID through a JDBC program.
 
 ## Technologies Used
 - Java
-- Servlet
-- HTML
-- Apache Tomcat
+- JDBC
+- MySQL
 
 ## Description
-The user enters two numbers in an HTML form. The servlet processes the request using the service() method, calculates the sum, and displays the result in the browser.
+The program accepts an employee ID as input and fetches the employee name and salary from the database using a SELECT query.
+
+## Database Table
+employees(emp_id INT PRIMARY KEY, name VARCHAR(50), salary DOUBLE)

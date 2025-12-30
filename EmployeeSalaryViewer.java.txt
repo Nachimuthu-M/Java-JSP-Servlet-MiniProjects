@@ -1,0 +1,51 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Scanner;
+
+public class EmployeeSalaryViewer {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Employee ID: ");
+        int empId = sc.nextInt();
+
+        try {
+            // Load JDBC Driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Create Database Connection
+            Connection con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/testdb",
+                    "root",
+                    "root"
+            );
+
+            // Select Query
+            String query = "SELECT name, salary FROM employees WHERE emp_id = ?";
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, empId);
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                System.out.println("Employee Name: " + rs.getString("name"));
+                System.out.println("Salary: " + rs.getDouble("salary"));
+            } else {
+                System.out.println("Employee record not found");
+            }
+
+            rs.close();
+            ps.close();
+            con.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        sc.close();
+    }
+}
