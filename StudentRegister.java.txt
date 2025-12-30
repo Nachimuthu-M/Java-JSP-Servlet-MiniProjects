@@ -1,0 +1,54 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+
+public class StudentRegister {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Student Name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Roll Number: ");
+        int roll = sc.nextInt();
+        sc.nextLine(); // consume newline
+
+        System.out.print("Enter Department: ");
+        String dept = sc.nextLine();
+
+        try {
+            // Load MySQL JDBC Driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Create Connection
+            Connection con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/testdb",
+                    "root",
+                    "root"
+            );
+
+            // Insert Query
+            String query = "INSERT INTO students(name, roll, dept) VALUES (?, ?, ?)";
+            PreparedStatement ps = con.prepareStatement(query);
+
+            ps.setString(1, name);
+            ps.setInt(2, roll);
+            ps.setString(3, dept);
+
+            ps.executeUpdate();
+
+            System.out.println("Student Registered Successfully");
+
+            ps.close();
+            con.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        sc.close();
+    }
+}
