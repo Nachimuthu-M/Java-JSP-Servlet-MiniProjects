@@ -1,15 +1,13 @@
-# Product Price Updater (JDBC)
+# Addition Calculator (Servlet)
 
 ## Objective
-To update the price of a product in the database using JDBC.
+To build a simple servlet that takes two numbers from an HTML form and prints their sum without using any database connection.
 
 ## Technologies Used
 - Java
-- JDBC
-- MySQL
+- Servlet
+- HTML
+- Apache Tomcat
 
 ## Description
-The program takes product ID and new price from the user and updates the corresponding record in the database using an UPDATE query.
-
-## Database Table
-products(id INT PRIMARY KEY, name VARCHAR(50), price DOUBLE)
+The user enters two numbers in an HTML form. The servlet processes the request using the service() method, calculates the sum, and displays the result in the browser.
