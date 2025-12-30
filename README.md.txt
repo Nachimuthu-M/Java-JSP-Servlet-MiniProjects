@@ -1,7 +1,7 @@
-# Bank Account Balance Checker (JDBC)
+# Product Price Updater (JDBC)
 
 ## Objective
-To fetch and display the account balance of a user by entering an account number using JDBC.
+To update the price of a product in the database using JDBC.
 
 ## Technologies Used
 - Java
@@ -9,7 +9,7 @@ To fetch and display the account balance of a user by entering an account number
 - MySQL
 
 ## Description
-The program accepts an account number from the user and retrieves the corresponding account holder name and balance from the database using a SELECT query.
+The program takes product ID and new price from the user and updates the corresponding record in the database using an UPDATE query.
 
 ## Database Table
-accounts(acc_no INT PRIMARY KEY, holder_name VARCHAR(50), balance DOUBLE)
+products(id INT PRIMARY KEY, name VARCHAR(50), price DOUBLE)
