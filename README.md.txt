@@ -1,7 +1,7 @@
-# Student Registration System (JDBC)
+# Bank Account Balance Checker (JDBC)
 
 ## Objective
-To create a Java console application that collects student details and stores them in a MySQL database using JDBC.
+To fetch and display the account balance of a user by entering an account number using JDBC.
 
 ## Technologies Used
 - Java
@@ -9,7 +9,7 @@ To create a Java console application that collects student details and stores th
 - MySQL
 
 ## Description
-The program takes student name, roll number, and department as input from the console and inserts the data into the `students` table using PreparedStatement.
+The program accepts an account number from the user and retrieves the corresponding account holder name and balance from the database using a SELECT query.
 
 ## Database Table
-students(id INT AUTO_INCREMENT, name VARCHAR(50), roll INT, dept VARCHAR(50))
+accounts(acc_no INT PRIMARY KEY, holder_name VARCHAR(50), balance DOUBLE)
