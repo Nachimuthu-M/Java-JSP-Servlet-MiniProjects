@@ -1,15 +1,13 @@
-# Employee Salary Viewer (JDBC)
+# Simple Interest Calculator (Servlet)
 
 ## Objective
-To retrieve and display the salary of an employee using their employee ID through a JDBC program.
+To calculate Simple Interest using a servlet without database support.
 
 ## Technologies Used
 - Java
-- JDBC
-- MySQL
+- Servlet
+- HTML
+- Apache Tomcat
 
 ## Description
-The program accepts an employee ID as input and fetches the employee name and salary from the database using a SELECT query.
-
-## Database Table
-employees(emp_id INT PRIMARY KEY, name VARCHAR(50), salary DOUBLE)
+The user enters Principal, Rate, and Time values in an HTML form. The servlet processes the request in the service() method, calculates simple interest, and displays the result.
